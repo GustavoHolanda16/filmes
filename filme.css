@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cabeçalho{
+    
+    margin: 0 0 15px 0 ;
+}
+div h2{
+    color: f#e2d9f3;
+}
+body{
+    background-color:#C9EAF4;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    align-self: self-end;
+}
+h1{
+    margin: 0 0 15px 0;
+    text-align: center;
+    color:#c3aeea;
+}
+label{
+    width: 80%;
+    font: size 20px;;
+    color:#7743DB;
+}
+button{
+    height: auto;
+    padding: 10px 26px;
+    float: right;
+    color: #030303;
+    border-radius: 25px;
+}
+input{
+    width: 80%;
+    height: 26px;
+    line-height: 26px;
+    font-size: 15px;
+    color: rgba(0,0,0,.5);
+    border: 0;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+.titulo{
+    text-align: center;
+    margin: 60px 0 0 0;
+}
+.sinopse{
+    margin:30px 0 15px 0;
+}
+
+#login{
+    justify-content: end;
+}
+#login{
+    float: right;
+}
+
+.atores{
+    color: blueviolet;
+
+}
+nav img {
+    cursor: pointer;
+}
+
