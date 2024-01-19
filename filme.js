@@ -1,42 +1,35 @@
-async function searchMovie() {
-    const apiKey = "ed417a2c5e740ebe2e3226f0f01c0f51"; // Substitua com a sua chave de API
-    const movieTitle = document.getElementById("movieTitle").value;
+function buscar() {
+    const apiKey = '790af7bc';  // Substitua 'sua_api_key' pela sua chave de API do OMDB
+    const movieTitle = document.getElementById('movieTitle').value;
+    
 
-    if (movieTitle === "") {
-        alert("Por favor, insira o título do filme.");
+    if (!movieTitle) {
+        alert('Por favor, insira o título do filme.');
         return;
     }
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieTitle)}&language=pt-BR`;
+    const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}`;
 
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const movieData = data.results[0];
-
-        if (movieData) {
-            const director = await getDirector(movieData.id, apiKey);
-            const actors = await getActors(movieData.id, apiKey);
-            const posterURL = getMovieCoverURL(movieData.poster_path);
-
-            const movieInfo = `
-                <h2 class='titulo'>Título: ${movieData.title}</h2>
-                <p class='sinopse'>Sinopse: ${movieData.overview}</p>
-                <p class='data'>Data de Lançamento: ${movieData.release_date}</p>
-                <p class='pontuação'>Pontuação: ${movieData.vote_average}</p>
-                <p class='diretor'>Diretor: ${director}</p>
-                <p class='atores'>Atores: ${actors}</p>
-                <img src='${posterURL}' alt='Capa do filme'>
-            `;
-
-            document.getElementById("movieInfo").innerHTML = movieInfo;
-        } else {
-            document.getElementById("movieInfo").innerHTML = "Nenhum filme encontrado com esse título.";
-        }
-    } catch (error) {
-        console.error("Erro ao buscar informações do filme: ", error);
-        document.getElementById("movieInfo").innerHTML = "Erro ao buscar informações do filme. Verifique a chave de API e a conexão com a internet.";
-    }
+    // Faz a solicitação à API usando fetch
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro na solicitação. Código de status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.Response === 'True') {
+                // Exibe as informações do filme na página
+                document.getElementById('poster').src = data.Poster;
+                document.getElementById('titulo').textContent = data.Title;
+                document.getElementById('sinopse').textContent = data.Plot;
+                document.getElementById('genero').textContent = data.Genre;
+                document.getElementById('duracao').textContent = data.Runtime;
+                document.getElementById('lancamento').textContent = data.Released;
+            } else {
+                console.error(`Erro: ${data.Error}`);
+            }
+        })
+        .catch(error => console.error(`Erro na solicitação: ${error.message}`));
 }
-
-// Restante do código permanece inalterado
