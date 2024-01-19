@@ -27,7 +27,7 @@ function buscar() {
                 document.getElementById('duracao').textContent = data.Runtime;
                 document.getElementById('lancamento').textContent = data.Year;
             } else {
-                document.getElementById('poster').src = 'https://github.com/GustavoHolanda16/filmes/blob/main/img/image-removebg-preview.png'
+                document.getElementById('poster').src = 'https://github.com/GustavoHolanda16/filmes/blob/main/img/image-removebg-preview.png?raw=true'
                 document.getElementById('titulo').textContent = 'Filme não encontrado!' 
             }
         })
