@@ -3,38 +3,28 @@
 <head>
     <title>Consulta de Filmes</title>
     <link rel="stylesheet" href="filme.css">
-    <div class="container">
-        <nav>
-            
-            <div>
-                <img id="menu" width="30" height="30" src="https://img.icons8.com/sf-black/64/C850F2/menu.png" alt="menu"/>
-                <img id="login" width="24" height="24" src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/24/C850F2/external-login-access-of-user-with-a-right-direction-arrow-classic-regular-tal-revivo.png" alt="external-login-access-of-user-with-a-right-direction-arrow-classic-regular-tal-revivo"/>
-            </div>
-            
-        </nav>
-    </div>
 </head>
 <body>
    <div class="container">
-        <div class="cabeçalho">
-            <h1>Consulta de Filmes</h1>
-            <h2>Bem-Vindo(a).</h2>
-            <h3>Milhões de Filmes, Séries e Pessoas para Descobrir. Explore já.</h3>
-            <input type="text" id="movieTitle" placeholder="Buscar por um Filme, Série ou Pessoa...">
-            <button onclick="buscar()">Pesquisar</button>
+        <div class="cabecalho">
+
+            <input type="text" id="movieTitle" placeholder="Informe o nome do filme">
+            <button id="btn" onclick="buscar()">Pesquisar</button>
         </div>
         <div id="filme-info">
-            <img id="poster" src="" alt="Poster do Filme">
-            <p><strong>Título:</strong> <span id="titulo"></span></p>
-            <p><strong>Sinopse:</strong> <span id="sinopse"></span></p>
-            <p><strong>Gênero:</strong> <span id="genero"></span></p>
-            <p><strong>Duração:</strong> <span id="duracao"></span></p>
-            <p><strong>Lançamento:</strong> <span id="lancamento"></span></p>
-        </div>
-
-    <div id="movieInfo"></div>
-
-    
+            <div class="img-f">
+                <img id="poster" src="" alt="">
+            </div>
+            <div class="infos">
+                <h1><strong></strong> <span id="titulo"></span></h1>
+                <div class="inf">
+                    <p><strong></strong> <span id="lancamento"></span></p>
+                    <p><strong></strong> <span id="genero"></span></p>
+                    <p><strong></strong> <span id="duracao"></span></p>
+                </div>
+            <p><strong></strong> <span id="sinopse"></span></p>
+            </div>
+        </div>    
    </div>
    <script src="filme.js"></script>
 </body>

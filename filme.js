@@ -1,5 +1,5 @@
 function buscar() {
-    const apiKey = '790af7bc';  // Substitua 'sua_api_key' pela sua chave de API do OMDB
+    const apiKey = '790af7bc';  
     const movieTitle = document.getElementById('movieTitle').value;
     
 
@@ -10,7 +10,7 @@ function buscar() {
 
     const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}`;
 
-    // Faz a solicitação à API usando fetch
+    
     fetch(apiUrl)
         .then(response => {
             if (!response.ok) {
@@ -20,15 +20,15 @@ function buscar() {
         })
         .then(data => {
             if (data.Response === 'True') {
-                // Exibe as informações do filme na página
                 document.getElementById('poster').src = data.Poster;
                 document.getElementById('titulo').textContent = data.Title;
                 document.getElementById('sinopse').textContent = data.Plot;
                 document.getElementById('genero').textContent = data.Genre;
                 document.getElementById('duracao').textContent = data.Runtime;
-                document.getElementById('lancamento').textContent = data.Released;
+                document.getElementById('lancamento').textContent = data.Year;
             } else {
-                console.error(`Erro: ${data.Error}`);
+                document.getElementById('poster').src = 'https://github.com/GustavoHolanda16/filmes/blob/main/img/image-removebg-preview.png'
+                document.getElementById('titulo').textContent = 'Filme não encontrado!' 
             }
         })
         .catch(error => console.error(`Erro na solicitação: ${error.message}`));
