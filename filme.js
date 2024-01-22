@@ -3,7 +3,7 @@ function carregarFilmePadrao() {
     const apiKey = '790af7bc';
     const filmePadrao = 'The Matrix'; // Título do filme padrão
 
-    const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${filmePadrao}`;
+    const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${filmePadrao}`;
 
     fetch(apiUrl)
         .then(response => {
@@ -57,7 +57,7 @@ function buscar() {
         return;
     }
 
-    const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}`;
+    const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movieTitle}`;
 
     fetch(apiUrl)
         .then(response => {
