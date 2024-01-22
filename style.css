@@ -11,18 +11,17 @@ body{
     background-color: #1c1c1c;
     display: flex;
     flex-direction: column;
+    width: 50%;
+    margin: auto;
 }
 .container{ 
-    width: 60%;
+    width: 100%;
     margin: auto;
-    align-items:center ;
-    justify-content: center;
-    padding-left: 100px; 
 }
 .cabecalho{
     padding-top: 90px;
     display: flex;
-    gap: 15px;
+    justify-content: space-between;
 }
 #movieTitle{
     width: 75%;
@@ -33,9 +32,6 @@ body{
     color: white;
 
 }
-footer{
-    color: #cab9b9;
-}
 #btn{
     padding: 10px;
     background-color: #4a4a4a;
@@ -44,30 +40,26 @@ footer{
     border-radius: 5px;
     text-align: center;
 }
-.img-f{
-    padding: 5px;
-   
-    
+#filme-info{
+    display: flex;
+    padding-top: 25px;
+    justify-content: space-between;
+    gap: 25px;
+
+}
+.img-f {
+    width: 100%;
 }
 
 #poster{
     border-radius: 8px;
-    box-shadow: 0 0 10px 2px #4a4a4a;
-    
-}
-
-#filme-info{
-    width: 87%;
-    padding-top: 25px;
-    display: flex;
-    gap: 10px;
+    box-shadow: 0 0 10px 2px #4a4a4a; 
 }
 
 #titulo{
     
     font-size: 38px;
     color:#ffffff;
-
 }
 .inf{
     margin-top: 25px;
@@ -87,3 +79,34 @@ footer{
     font-size: 18px;
     color: #cab9b9;
 }
+footer{
+    margin: auto;
+    padding-top: 100px;
+    bottom: 0;
+    text-align: center;
+}
+footer h1{
+    color:#cab9b9;
+    font-size: 20px;
+}
+@media only screen and (max-width: 600px) {
+    body{
+        width: 90%;
+        margin: auto;
+    }
+    #filme-info{
+        display: flex;
+        flex-direction: column;
+    }
+    #poster{
+        width: 100%;
+        aspect-ratio: 1;
+    }
+    footer{
+        padding-top: 25px;
+    }
+    footer h1{
+        color:#cab9b9;
+        font-size: 12px;
+    }
+  }
