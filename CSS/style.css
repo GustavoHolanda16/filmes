@@ -8,37 +8,53 @@
     font-weight: 600;
 }
 body{
+
     background-color: #1c1c1c;
     display: flex;
     flex-direction: column;
     width: 50%;
     margin: auto;
 }
-.container{ 
+.navbar {
+    top: 0;
     width: 100%;
-    margin: auto;
+    margin-top: 25px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
-.cabecalho{
-    padding-top: 90px;
+.logo img {
+    max-height: 180px;
+}
+.container{ 
+    margin-top: 25px; /* Espaço para não ficar embaixo da navbar */
+    width: 100%;
+}
+
+.cabecalho {
     display: flex;
     justify-content: space-between;
 }
-#movieTitle{
+#movieTitle {
     width: 75%;
     font-size: 14px;
     padding: 10px;
     background-color: #4a4a4a;
     border-radius: 5px;
     color: white;
-
 }
-#btn{
-    padding: 10px;
+#btn {
+    padding: 10px 15px;
     background-color: #4a4a4a;
+    border: none;
     color: white;
-    font-size: 14px;
-    border-radius: 5px;
-    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+#btn:hover {
+    background-color: #6a6a6a;
 }
 #filme-info{
     display: flex;
@@ -60,6 +76,9 @@ body{
     
     font-size: 38px;
     color:#ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .inf{
     margin-top: 25px;
@@ -70,7 +89,7 @@ body{
 
 }
 #lancamento, #duracao{
-    color: #ce171f;
+    color: #26CEFB;
 } 
 #genero{
     color: #cab9b9;
@@ -79,16 +98,43 @@ body{
     font-size: 18px;
     color: #cab9b9;
 }
-footer{
-    margin: auto;
-    padding-top: 100px;
-    bottom: 0;
-    text-align: center;
+.dev_contact{
+    position: fixed;
+    bottom: 20px;
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino do posicionamento */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: aliceblue;
+    box-shadow: 0 2px 5px #26CEFB;
+;
+    z-index: 1000;
 }
-footer h1{
-    color:#cab9b9;
-    font-size: 20px;
+
+.developer-footer span {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
 }
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
 @media only screen and (max-width: 700px) {
     body{
         width: 90%;
